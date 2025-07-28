@@ -59,18 +59,17 @@ function appendIt(keys){
 }
 
 
+amount.addEventListener("keydown", () => {
+            amount.classList.remove("errorAmount");
+            warning.textContent = ``;
+});
+
 function convertRate(f, t){
     if(amount.value == "" || amount.value == 0){
         console.log("Please enter valid value greater than 0!!!");
-        
-        setTimeout( () => {
-            amount.classList.add("errorAmount");
-            warning.textContent = `Please enter valid value greater than 0!!!`;
-            setTimeout( () => {
-            amount.classList.remove("errorAmount");
-            warning.textContent = ``;           
-            },600)
-        }, 10)
+        amount.classList.add("errorAmount");
+        warning.textContent = `Please enter valid value greater than 0!!!`;
+           
         
     }else {
         let fRate = amount.value * f;
